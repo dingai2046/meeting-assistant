@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议总结</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">📝 会议总结</h1>
+        
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <button onclick="generateSummary()" class="bg-blue-500 text-white px-6 py-3 rounded-lg">
+                生成会议总结
+            </button>
+        </div>
+        
+        <div id="summary" class="bg-white rounded-lg shadow p-6 prose max-w-none"></div>
+    </div>
+    
+    <script>
+        async function generateSummary() {
+            const meetingId = new URLSearchParams(window.location.search).get('id');
+            const response = await fetch(`/api/meeting/summarize/${meetingId}`, {method: 'POST'});
+            const data = await response.json();
+            document.getElementById('summary').innerHTML = marked.parse(data.summary);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>

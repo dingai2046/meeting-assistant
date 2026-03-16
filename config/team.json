@@ -1,0 +1,22 @@
+{
+  "team_members": [
+    {
+      "name": "张三",
+      "role": "技术负责人",
+      "skills": ["开发", "架构"],
+      "email": "zhangsan@example.com"
+    },
+    {
+      "name": "李四",
+      "role": "产品经理",
+      "skills": ["产品", "设计"],
+      "email": "lisi@example.com"
+    },
+    {
+      "name": "王五",
+      "role": "市场总监",
+      "skills": ["市场", "销售"],
+      "email": "wangwu@example.com"
+    }
+  ]
+}
