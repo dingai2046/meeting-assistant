@@ -8,10 +8,10 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from translator import TranslatorService
-from summarizer import SummarizerService
-from meeting_recorder import MeetingRecorder
-from taskmaster import TaskMasterService
+from backend.translator import TranslatorService
+from backend.summarizer import SummarizerService
+from backend.meeting_recorder import MeetingRecorder
+from backend.taskmaster import TaskMasterService
 
 app = FastAPI(title="Meeting Assistant")
 
